@@ -6,6 +6,7 @@ function Header() {
   return (
     <View style={styles.headerView}>
       <Text style={styles.headerTitle}>Welcome to Renter Reviews</Text>
+      
     </View>
   )
 }
