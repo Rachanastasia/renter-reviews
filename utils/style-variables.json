@@ -1,0 +1,20 @@
+{
+  "accent_color": "#5b29ff",
+  "accent_color_light": "#29cdff",
+  "padding_sm": "1em",
+  "padding_med": "1.8em",
+  "padding_lg": "2.6em",
+  "border": "1px solid #5b29ff",
+  "font_size": "1rem",
+
+  "button": {
+    "backgroundColor": "#5b29ff",
+    "marginTop": "1.8rem",
+    "display": "flex",
+    "width": "60%",
+    "justifyContent": "center",
+    "alignItems":"center",
+    "height": "2rem",
+    "alignSelf": "center"
+  }
+}
