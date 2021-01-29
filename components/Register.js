@@ -20,7 +20,7 @@ function Register() {
         <Text style={styles.label}>Repeat Password</Text>
         <TextInput autoCapitalize='none' style={styles.input} />
       </View>
-      <TouchableOpacity title="Login" style={styles.button}>
+      <TouchableOpacity title="Register" style={styles.button}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
 

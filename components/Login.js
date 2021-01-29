@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, ViewStyle, TextStyle, TextInputProps, TextInput } from 'react-native'
 import styleVariables from '../utils/style-variables.json'
+import { UserContext } from '../contexts/userContext'
+
 
 function Login() {
+  const { user } = useContext(UserContext)
+  console.log(user)
   return (
     <View>
       <View style={styles.inputWrapper}>
