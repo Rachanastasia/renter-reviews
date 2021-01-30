@@ -1,4 +1,4 @@
-import { REACT_APP_API_ENDPOINT } from './config'
+import { REACT_APP_API_ENDPOINT } from '../config'
 
 const UserAuthService = {
   postLogin(email, password) {
