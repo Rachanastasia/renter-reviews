@@ -1,9 +1,16 @@
 import React from 'react'
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native'
+import styleVariables from '../utils/style-variables.json'
+import { useRemoveRouterHeader } from '../hooks/useRemoveRouterHeader';
 
-function Register() {
+
+
+
+function Register({ navigation }) {
+  useRemoveRouterHeader(navigation)
+
   return (
-    <View>
+    <View style={{ backgroundColor: 'white' }}>
       <View style={styles.inputWrapper}>
         <Text style={styles.label}>Name</Text>
         <TextInput autoCapitalize='none' style={styles.input} />
@@ -20,10 +27,15 @@ function Register() {
         <Text style={styles.label}>Repeat Password</Text>
         <TextInput autoCapitalize='none' style={styles.input} />
       </View>
-      <TouchableOpacity title="Register" style={styles.button}>
-        <Text style={styles.buttonText}>Login</Text>
-      </TouchableOpacity>
-
+      <View style={styles.inputWrapper}>
+        <TouchableOpacity title="Register" style={styles.button}>
+          <Text style={styles.buttonText}>Register</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.linkText}>Already have an account?</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -45,6 +57,12 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "white",
     fontSize: styleVariables.font_size
+  },
+  linkText: {
+    color: styleVariables.accent_color,
+    fontSize: styleVariables.font_size,
+    marginTop: styleVariables.padding_med,
+    marginLeft: styleVariables.padding_sm
   },
   inputWrapper: {
     display: 'flex',

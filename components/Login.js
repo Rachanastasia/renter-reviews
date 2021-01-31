@@ -1,16 +1,21 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useLayoutEffect } from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, ViewStyle, TextStyle, TextInputProps, TextInput } from 'react-native'
 import styleVariables from '../utils/style-variables.json'
 import { UserContext } from '../contexts/userContext'
+import { useRemoveRouterHeader } from '../hooks/useRemoveRouterHeader';
 
 
-function Login() {
+
+
+function Login({ navigation }) {
   const { handleLogin, error } = useContext(UserContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  useRemoveRouterHeader(navigation)
+
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.inputWrapper}>
         <Text style={styles.label}>Email</Text>
         <TextInput
@@ -29,11 +34,11 @@ function Login() {
       <View style={styles.inputWrapper}>
         <TouchableOpacity
           style={styles.button}
-          onClick={() => handleLogin()}>
+          onClick={() => handleLogin(email, password)}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onClick={() => { }}>
+          onPress={() => navigation.navigate('Register')}>
           <Text style={styles.linkText}>Create an account</Text>
         </TouchableOpacity>
       </View>
@@ -71,6 +76,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%"
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   }
 })
 
