@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native'
 import styleVariables from '../utils/style-variables.json'
 import { useRemoveRouterHeader } from '../hooks/useRemoveRouterHeader';
-
+import ErrorMessage from './ErrorMessage'
 
 
 
@@ -27,6 +27,7 @@ function Register({ navigation }) {
         <Text style={styles.label}>Repeat Password</Text>
         <TextInput autoCapitalize='none' style={styles.input} />
       </View>
+      <ErrorMessage />
       <View style={styles.inputWrapper}>
         <TouchableOpacity title="Register" style={styles.button}>
           <Text style={styles.buttonText}>Register</Text>

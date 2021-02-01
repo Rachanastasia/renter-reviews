@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity, ViewStyle, TextStyle, TextInp
 import styleVariables from '../utils/style-variables.json'
 import { UserContext } from '../contexts/userContext'
 import { useRemoveRouterHeader } from '../hooks/useRemoveRouterHeader';
-
+import ErrorMessage from './ErrorMessage'
 
 
 
@@ -30,7 +30,7 @@ function Login({ navigation }) {
           style={styles.input}
           onChangeText={t => setPassword(t)} />
       </View>
-      {error ? <Text>{error}</Text> : null}
+      <ErrorMessage />
       <View style={styles.inputWrapper}>
         <TouchableOpacity
           style={styles.button}

@@ -1,6 +1,7 @@
 {
   "accent_color": "#5b29ff",
   "accent_color_light": "#29cdff",
+  "error_color": "red",
   "padding_sm": "1em",
   "padding_med": "1.8em",
   "padding_lg": "2.6em",
