@@ -34,7 +34,7 @@ function Login({ navigation }) {
       <View style={styles.inputWrapper}>
         <TouchableOpacity
           style={styles.button}
-          onClick={() => handleLogin(email, password)}>
+          onPress={() => handleLogin(email, password)}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity

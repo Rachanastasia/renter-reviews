@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useLayoutEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
 import Header from './components/Header'
@@ -23,6 +22,7 @@ export default function App() {
       <Header />
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name='Home' component={Home} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Register" component={Register} />
         </Stack.Navigator>

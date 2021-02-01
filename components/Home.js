@@ -1,13 +1,16 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, TouchableOpacity } from 'react-native'
 import { useRemoveRouterHeader } from '../hooks/useRemoveRouterHeader';
 
 
 function Home({ navigation }) {
   useRemoveRouterHeader(navigation)
   return (
-    <View>
+    <View style={{ backgroundColor: 'white' }}>
       <Text>HOME</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <Text>Login</Text>
+      </TouchableOpacity>
     </View>
   )
 }

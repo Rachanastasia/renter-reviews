@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react'
 import TokenService from '../services/token-service.js'
-import { postLogin, postNewUser } from '../services/user-auth-service.js'
+import UserAuthService from '../services/user-auth-service.js'
 
 export const UserContext = createContext()
 
@@ -8,10 +8,10 @@ function UserContextProvider({ children }) {
   const [user, setUser] = useState({})
   const [error, setError] = useState(null)
 
-  const handleLogin = async (email, password) => {
+  const handleLogin = async (e, password) => {
     try {
-      console.log(email, password)
-      const authToken = await postLogin(email, password)
+      console.log(e, password)
+      const authToken = await UserAuthService.postLogin(e, password)
 
       if (!authToken) {
         setError(authToken.error)
